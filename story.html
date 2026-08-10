@@ -4,13 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ストーリー｜斎藤奨大</title>
-  <meta name="description" content="高校の陸上部からデータコンサルタントまで。5つの転機を振り返ります。">
+  <meta name="description" content="高校の陸上部から、これからの未来まで。6つの転機を振り返ります。">
   <link rel="stylesheet" href="css/style.css">
+
+  <!-- JSが動かない環境では、隠している要素を表示に戻す -->
+  <noscript><style>.fade { opacity: 1; }</style></noscript>
 </head>
 <body>
 
-
-<!-- ===== 全ページ共通のメニュー ===== -->
+<!-- 全ページ共通のメニュー -->
 <header class="site-nav">
   <div class="wrap">
     <a class="site-name" href="index.html">SHOTA SAITO</a>
@@ -26,8 +28,7 @@
 
 <main class="page-top">
 
-
-<!-- ===== ストーリー ===== -->
+<!-- ストーリー -->
 <section id="story">
   <div class="wrap">
 
@@ -36,18 +37,20 @@
       <span class="ja">ストーリー</span>
     </h1>
 
-    <p class="fade">私がこれまで歩んできた 5つの転機です。STEPを押すと その時期の話が開きます。</p>
+    <p class="fade">私がこれまで歩んできた転機と、これからの未来です。STEPを押すと、その時期の話が開きます。</p>
 
   </div>
 
-  <div class="tl fade" role="tablist" aria-label="これまでの歩み">
+  <div class="tl fade">
 
+    <!-- トラックの図形。ここの数値は「線を引く座標」であって、
+         画面上の大きさではない。大きさはCSSの .tl が決めている -->
     <svg class="tl-oval" viewBox="0 0 660 340" aria-hidden="true">
       <rect class="surface" x="40" y="52" width="440" height="236" rx="118"/>
       <rect class="infield" x="76" y="88" width="368" height="164" rx="82"/>
       <rect class="lane" x="52" y="64" width="416" height="212" rx="106"/>
       <rect class="lane" x="64" y="76" width="392" height="188" rx="94"/>
-      <path class="exit" d="M470 170 L646 170"/>
+      <path class="exit" d="M470 170 L596 170"/>
 
       <g class="oval-runner">
         <image class="oval-runner-body" href="images/runner.png"
@@ -55,145 +58,130 @@
       </g>
     </svg>
 
-      <button type="button" class="tl-btn p1" role="tab"
-              data-step="01" aria-selected="false">
+      <button type="button" class="tl-btn p1" data-step="01" aria-selected="false">
         <span class="tl-dot"></span>
         <span class="tl-text">
           <span class="tl-step">STEP 01</span>
           <span class="tl-label">高校<br>陸上部</span>
         </span>
       </button>
-      <button type="button" class="tl-btn p2" role="tab"
-              data-step="02" aria-selected="false">
+      <button type="button" class="tl-btn p2" data-step="02" aria-selected="false">
         <span class="tl-dot"></span>
         <span class="tl-text">
           <span class="tl-step">STEP 02</span>
           <span class="tl-label">大学<br>臨床工学</span>
         </span>
       </button>
-      <button type="button" class="tl-btn p3" role="tab"
-              data-step="03" aria-selected="false">
+      <button type="button" class="tl-btn p3" data-step="03" aria-selected="false">
         <span class="tl-dot"></span>
         <span class="tl-text">
           <span class="tl-step">STEP 03</span>
           <span class="tl-label">透析室<br>4年半</span>
         </span>
       </button>
-      <button type="button" class="tl-btn p4" role="tab"
-              data-step="04" aria-selected="false">
+      <button type="button" class="tl-btn p4" data-step="04" aria-selected="false">
         <span class="tl-dot"></span>
         <span class="tl-text">
           <span class="tl-step">STEP 04</span>
           <span class="tl-label">独立<br>アフィリエイト</span>
         </span>
       </button>
-      <button type="button" class="tl-btn p5" role="tab"
-              data-step="05" aria-selected="false">
+      <button type="button" class="tl-btn p5" data-step="05" aria-selected="false">
         <span class="tl-dot"></span>
         <span class="tl-text">
           <span class="tl-step">STEP 05</span>
           <span class="tl-label">現在<br>データの道へ</span>
         </span>
       </button>
+      <button type="button" class="tl-btn p6" data-step="06" aria-selected="false">
+        <span class="tl-dot"></span>
+        <span class="tl-text">
+          <span class="tl-step">STEP 06</span>
+          <span class="tl-label">未来</span>
+        </span>
+      </button>
 
   </div>
 </section>
 
-
 </main>
-
 
 <footer>
   <div class="wrap">
-    <a class="next" href="strengths.html">
+    <a href="strengths.html">
       <span class="next-label">NEXT</span>
-      <span class="next-title">私の強み<span class="next-arrow">→</span></span>
+      <span class="next-title">私の強み</span>
     </a>
   </div>
 </footer>
 
 
-<!-- ============================================================ -->
-<!-- ここからモーダル。STEPを押すと中身が入れ替わって表示される      -->
-<!-- ============================================================ -->
+<!-- STEPを押すと開くモーダル -->
 <div class="modal" id="story-modal" hidden>
 
   <div class="modal-overlay" data-close></div>
 
-  <div class="modal-box" role="dialog" aria-modal="true" aria-label="ストーリーの詳細">
+  <div class="modal-box">
 
     <button type="button" class="modal-close" data-close aria-label="閉じる">×</button>
 
-      <article class="ep" data-step="01" hidden>
+    <article class="ep" data-step="01" hidden>
+      <div>
+        <h2>3年目に 関東大会出場</h2>
+        <p class="ep-body">僕にとって、高校3年間の青春は陸上でした。400mは最後の100mが一番苦しくて、「もう走れない」と何度も思う競技です。1、2年生は県大会止まり。それでも走り続けた3年生の県大会で6位に入り、<span class="mk">関東大会</span>の切符を掴みました。</p>
+        <p class="ep-point">49<span class="unit">秒</span>97<small>400m 自己ベスト</small></p>
+        <p><span class="tag">STRENGTH　継続力</span></p>
+      </div>
+      <div class="ep-photo">
+        <img src="images/track.jpg" alt="関東大会に出場した4×400mリレーのメンバー">
+      </div>
+    </article>
 
-        <div>
-          <h2>3年目に 関東大会出場</h2>
-          <p class="ep-body">僕にとって、高校3年間の青春は陸上でした。400mは最後の100mが一番苦しくて、「もう走れない」と何度も思う競技です。1、2年生は県大会止まり。それでも走り続けた3年生の県大会で6位に入り、<span class="mk">関東大会</span>の切符を掴みました。</p>
+    <article class="ep" data-step="02" hidden>
+      <div>
+        <h2>ドラマを見て 医療の道に進んだ</h2>
+        <p class="ep-body">きっかけは、高校生のときに見た『医龍』でした。一人の患者さんを助けるために、医師も看護師も臨床工学技士も動く。あの姿に感動して、杏林大学へ進学しました。実習で心が折れそうなときもありましたが、4年間続けられたのは、あのときの気持ちを大事にしていたからです。</p>
+        <p><span class="tag">STRENGTH　責任感</span></p>
+      </div>
+      <div class="ep-photo">
+        <img src="images/graduation.jpg" alt="杏林大学の卒業式で撮影した写真">
+      </div>
+    </article>
 
-          <p class="ep-point">49<span class="unit">秒</span>97<small>400m 自己ベスト</small></p>
+    <article class="ep no-photo" data-step="03" hidden>
+      <div>
+        <h2>透析室で 40名の患者を担当した</h2>
+        <p class="ep-body">臨床工学技士として、透析の現場に<span class="mk">約4年半</span>在籍しました。患者数は40名。1人あたり10名を受け持って回していました。装置の操作や判断ひとつが患者さんの命に直結するプレッシャーが毎日ありましたが、その経験から、チームで働く重要性と仕事への責任感を培うことができました。</p>
+        <p class="ep-point">40<span class="unit">名</span><small>担当患者数（1人あたり10名を受け持ち）</small></p>
+        <p><span class="tag">STRENGTH　責任感</span></p>
+      </div>
+    </article>
 
-          <p><span class="tag">STRENGTH　継続力</span></p>
-        </div>
+    <article class="ep" data-step="04" hidden>
+      <div>
+        <h2>収入ゼロの1年を経て 独立した</h2>
+        <p class="ep-body">コロナ禍に副業で始めたゲーム系のアフィリエイトで独立しました。<span class="mk">最初の1年は、ほぼ収入なし</span>。アクセス数と成約率を見て、どこを直せば数字が動くかを考える。それが面白くて、気づけば時間を忘れるぐらい夢中になっていました。</p>
+        <p class="ep-point">0<span class="unit">円</span> → 100<span class="unit">万円</span><small>月間収益（1年目 → 2年目以降）</small></p>
+        <p><span class="tag">STRENGTH　改善力</span></p>
+      </div>
+      <div class="ep-photo">
+        <img src="images/affiliate.jpg" alt="運営していたスマホゲーム紹介サイト">
+      </div>
+    </article>
 
-        <div class="ep-photo">
-          <img src="images/track.jpg" alt="関東大会に出場した4×400mリレーのメンバー">
-        </div>
+    <article class="ep no-photo" data-step="05" hidden>
+      <div>
+        <h2>30歳から データの道へ</h2>
+        <p class="ep-body">アフィリエイトのあと、もう一度透析の現場に戻って2年働きました。それでも、数字を見て改善していたあの時間が頭から離れず、もっと大きな課題に組織で向き合いたいと思うように。未経験ですが、年齢を理由に諦めませんでした。</p>
+      </div>
+    </article>
 
-      </article>
-
-      <article class="ep" data-step="02" hidden>
-
-        <div>
-          <h2>ドラマを見て 医療の道に進んだ</h2>
-          <p class="ep-body">きっかけは、高校生のときに見た『医龍』でした。一人の患者さんを助けるために、医師も看護師も臨床工学技士も動く。あの姿に感動して、杏林大学へ進学しました。実習で心が折れそうなときもありましたが、4年間続けられたのは、あのときの気持ちを大事にしていたからです。</p>
-
-          <p><span class="tag">STRENGTH　責任感</span></p>
-        </div>
-
-        <div class="ep-photo">
-          <img src="images/graduation.jpg" alt="杏林大学の卒業式で撮影した写真">
-        </div>
-
-      </article>
-
-      <article class="ep no-photo" data-step="03" hidden>
-
-        <div>
-          <h2>透析室で 40名の患者を担当した</h2>
-          <p class="ep-body">臨床工学技士として、透析の現場に<span class="mk">約4年半</span>在籍しました。患者数は40名。1人あたり10名を受け持って回していました。装置の操作や判断ひとつが患者さんの命に直結するプレッシャーが毎日ありましたが、その経験から、チームで働く重要性と仕事への責任感を培うことができました。</p>
-
-          <p class="ep-point">40<span class="unit">名</span><small>担当患者数（1人あたり10名を受け持ち）</small></p>
-
-          <p><span class="tag">STRENGTH　責任感</span></p>
-        </div>
-
-      </article>
-
-      <article class="ep" data-step="04" hidden>
-
-        <div>
-          <h2>収入ゼロの1年を経て 独立した</h2>
-          <p class="ep-body">コロナ禍に副業で始めたゲーム系のアフィリエイトで独立しました。<span class="mk">最初の1年は、ほぼ収入なし</span>。アクセス数と成約率を見て、どこを直せば数字が動くかを考える。それが面白くて、気づけば時間を忘れるぐらい夢中になっていました。</p>
-
-          <p class="ep-point">0<span class="unit">円</span> → 100<span class="unit">万円</span><small>月間収益（1年目 → 2年目以降）</small></p>
-
-          <p><span class="tag">STRENGTH　改善力</span></p>
-        </div>
-
-        <div class="ep-photo">
-          <img src="images/affiliate.jpg" alt="運営していたスマホゲーム紹介サイト">
-        </div>
-
-      </article>
-
-      <article class="ep no-photo" data-step="05" hidden>
-
-        <div>
-          <h2>30歳から データの道へ</h2>
-          <p class="ep-body">アフィリエイトのあと、もう一度透析の現場に戻って2年働きました。それでも、数字を見て改善していたあの時間が頭から離れず、もっと大きな課題に組織で向き合いたいと思うように。未経験ですが、年齢を理由に諦めず、<span class="mk">何歳からでも挑戦できること</span>を証明したいです。</p>
-        </div>
-
-      </article>
+    <article class="ep no-photo" data-step="06" hidden>
+      <div>
+        <h2>これから 証明していくこと</h2>
+        <p class="ep-body">いま立っているのは、1周を走り終えた場所ではなく、次のスタート地点だと思っています。<span class="mk">何歳からでも新しい挑戦ができること</span>を、これから自分の仕事で証明していきます。</p>
+      </div>
+    </article>
 
   </div>
 </div>

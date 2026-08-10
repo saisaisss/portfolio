@@ -6,11 +6,13 @@
   <title>斎藤奨大｜自己紹介</title>
   <meta name="description" content="医療現場からデータコンサルタントへ。斎藤奨大の自己紹介サイトです。">
   <link rel="stylesheet" href="css/style.css">
+
+  <!-- JSが動かない環境では、隠している要素を表示に戻す -->
+  <noscript><style>.fade { opacity: 1; }</style></noscript>
 </head>
 <body>
 
-
-<!-- ===== 全ページ共通のメニュー ===== -->
+<!-- 全ページ共通のメニュー -->
 <header class="site-nav">
   <div class="wrap">
     <a class="site-name" href="index.html">SHOTA SAITO</a>
@@ -24,22 +26,19 @@
 </header>
 
 
-<!-- ===== ホーム ===== -->
-<header class="hero" id="top">
-  <div class="wrap">
+<!-- ホーム -->
+<header class="hero">
+  <div class="wrap wrap-wide">
     <div class="hero-inner">
 
       <div class="hero-text">
         <p class="hero-name">SHOTA SAITO</p>
-        <div class="hero-line"></div>
-
-        <h1><span class="nb">医療現場から</span><span class="nb"><span class="mk">データコンサルタント</span>へ</span></h1>
-
-        <p><span class="nb">埼玉県出身</span> <span class="nb">人の命に関わる透析現場で<span class="mk">4年半</span>働いたあと</span> <span class="nb">データを用いて企業の経営課題を解決するコンサルタントに挑戦しています</span></p>
+        <h1>医療現場から<span class="mk">データコンサルタント</span>へ</h1>
+        <p>埼玉県出身。人の命に関わる透析現場で<span class="mk">4年半</span>働いたあと、データを用いて企業の経営課題を解決するコンサルタントに挑戦しています。</p>
       </div>
 
       <div class="hero-photo">
-        <img src="images/profile.jpg" alt="斎藤奨大" width="1200" height="1600">
+        <img src="images/profile.jpg" alt="斎藤奨大">
       </div>
 
     </div>
@@ -49,8 +48,7 @@
 
 <main>
 
-
-<!-- ===== 私について ===== -->
+<!-- 私について -->
 <section id="about">
   <div class="wrap">
 
@@ -59,58 +57,53 @@
       <span class="ja">私について</span>
     </h2>
 
-    <div class="about-grid">
+    <div class="ab-row fade">
 
-      <div class="ab-row">
-
-        <div class="fade">
-          <h3>斎藤 奨大</h3>
-          <p>1996年5月3日生まれ、埼玉県出身の30歳です。臨床工学技士として透析医療に携わったあと、副業で始めたアフィリエイトで<span class="mk">マーケティングの面白さ</span>を知りました。</p>
-          <p>休日はベルーナドームでライオンズを応援したり、好きなアーティストのライブに行ったりしています。</p>
-        </div>
-
-        <div class="fade">
-          <h3>PROFILE</h3>
-          <table>
-            <tr><th>生年月日</th><td>1996年5月3日（30歳）</td></tr>
-            <tr><th>出身</th><td>埼玉県</td></tr>
-            <tr><th>学生時代</th><td>陸上部 400m／4×400mリレー 関東大会出場</td></tr>
-            <tr><th>前職</th><td>臨床工学技士（人工透析／約4年半）</td></tr>
-            <tr><th>現在</th><td>データコンサルタント</td></tr>
-          </table>
-        </div>
-
+      <div>
+        <h3>斎藤 奨大</h3>
+        <p>1996年5月3日生まれ、埼玉県出身の30歳です。臨床工学技士として透析医療に携わったあと、副業で始めたアフィリエイトで<span class="mk">マーケティングの面白さ</span>を知りました。</p>
+        <p>休日はベルーナドームでライオンズを応援したり、好きなアーティストのライブに行ったりしています。</p>
       </div>
 
-      <div class="ab-row">
-
-        <div class="fade">
-          <h3>野球観戦</h3>
-          <img src="images/baseball.jpg" alt="ベルーナドームでの観戦" width="1200" height="1580">
-          <p>埼玉西武ライオンズのファンです。チャンステーマ4が流れる瞬間の、球場が一つになっている感じがとても好きです。</p>
-        </div>
-
-        <div class="fade">
-          <h3>好きなアーティスト</h3>
-          <img src="images/live.jpg" alt="日本武道館のライブ会場" width="1200" height="1585">
-          <p>Tani Yuukiの大ファンです。去年は武道館のライブに行ってきました。「W/X/Y」と「Myra」は、気分が沈んだときによく聴きます。</p>
-        </div>
-
+      <div>
+        <h3>PROFILE</h3>
+        <table>
+          <tr><th>生年月日</th><td>1996年5月3日（30歳）</td></tr>
+          <tr><th>出身</th><td>埼玉県</td></tr>
+          <tr><th>学生時代</th><td>陸上部 400m／4×400mリレー 関東大会出場</td></tr>
+          <tr><th>前職</th><td>臨床工学技士（人工透析／約4年半）</td></tr>
+          <tr><th>現在</th><td>データコンサルタント</td></tr>
+        </table>
       </div>
 
     </div>
+
+    <div class="ab-row fade">
+
+      <div>
+        <h3>野球観戦</h3>
+        <img src="images/baseball.jpg" alt="ベルーナドームでの観戦">
+        <p>埼玉西武ライオンズのファンです。チャンステーマ4が流れる瞬間の、球場が一つになっている感じがとても好きです。</p>
+      </div>
+
+      <div>
+        <h3>好きなアーティスト</h3>
+        <img src="images/live.jpg" alt="日本武道館のライブ会場">
+        <p>Tani Yuukiの大ファンです。去年は武道館のライブに行ってきました。「W/X/Y」と「Myra」は、気分が沈んだときによく聴きます。</p>
+      </div>
+
+    </div>
+
   </div>
 </section>
 
-
 </main>
-
 
 <footer>
   <div class="wrap">
-    <a class="next" href="story.html">
+    <a href="story.html">
       <span class="next-label">NEXT</span>
-      <span class="next-title">ストーリー<span class="next-arrow">→</span></span>
+      <span class="next-title">ストーリー</span>
     </a>
   </div>
 </footer>
