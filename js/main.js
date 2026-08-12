@@ -252,3 +252,60 @@ if (likeButton) {
     this.disabled = true;
   });
 }
+
+/* =========================
+   3ページ閲覧の計測
+========================= */
+
+(function () {
+  const storageKey = 'visited_pages';
+  const sentKey = 'three_page_view_sent';
+
+  // URLからページ名を判定
+  const path = window.location.pathname;
+  let currentPage = '';
+
+  if (
+    path.endsWith('/portfolio/') ||
+    path.endsWith('/portfolio/index.html')
+  ) {
+    currentPage = 'home';
+  } else if (path.endsWith('/portfolio/story.html')) {
+    currentPage = 'story';
+  } else if (path.endsWith('/portfolio/strengths.html')) {
+    currentPage = 'strengths';
+  } else {
+    return;
+  }
+
+  // これまで見たページを取得
+  let visitedPages = JSON.parse(
+    sessionStorage.getItem(storageKey) || '[]'
+  );
+
+  // 同じページは重複して数えない
+  if (!visitedPages.includes(currentPage)) {
+    visitedPages.push(currentPage);
+
+    sessionStorage.setItem(
+      storageKey,
+      JSON.stringify(visitedPages)
+    );
+  }
+
+  // 3種類すべて閲覧したら1回だけ送信
+  if (
+    visitedPages.length >= 3 &&
+    sessionStorage.getItem(sentKey) !== 'true'
+  ) {
+    window.dataLayer = window.dataLayer || [];
+
+    window.dataLayer.push({
+      event: 'three_page_view',
+      visited_page_count: visitedPages.length,
+      visited_pages: visitedPages.join(',')
+    });
+
+    sessionStorage.setItem(sentKey, 'true');
+  }
+})();
