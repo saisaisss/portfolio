@@ -30,9 +30,9 @@
 :root {
 
   /* 基本の色（5色） */
-  --ink:    #16181d;   /* 見出し */
+  --ink:    #1d1619;   /* 見出し */
   --body:   #35383f;   /* 本文 */
-  --sub:    #8a8d94;   /* 補足 */
+  --sub:    #948e8a;   /* 補足 */
   --accent: #a9522f;   /* 線・強調 */
   --line:   #e4e7ec;   /* 罫線 */
 
@@ -48,7 +48,7 @@
   --fs-lead:    30px;   /* 強み・モーダルの見出し・大きな数字 */
   --fs-sub:     20px;   /* 強みの一言 */
   --fs-body:    17px;   /* 本文 */
-  --fs-small:   15px;   /* 補足 */
+  --fs-small:   15x;   /* 補足 */
   --fs-label:   13px;   /* 英語ラベル */
 
   /* 幅（3種類だけ） */
@@ -680,4 +680,31 @@ footer {
   .st-circle { width: 170px; }
 
   .vision-body { max-width: none; }
+}
+
+/* いいねボタン */
+.reaction-section {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.reaction-button {
+  padding: 14px 28px;
+  font-size: 16px;
+  font-weight: 700;
+  border: 1px solid #222;
+  border-radius: 999px;
+  background: #fff;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.reaction-button:hover {
+  transform: translateY(-2px);
+}
+
+.reaction-button:disabled {
+  opacity: 0.6;
+  cursor: default;
+  transform: none;
 }
