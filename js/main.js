@@ -226,3 +226,29 @@
   select(0);
 
 })();
+
+/* =========================
+   いいねボタンの計測
+========================= */
+
+const likeButton = document.getElementById('like-button');
+
+if (likeButton) {
+  likeButton.addEventListener('click', function () {
+
+    // GTMのdataLayerへクリック情報を送る
+    window.dataLayer = window.dataLayer || [];
+
+    window.dataLayer.push({
+      event: 'like_click',
+      reaction_type: 'like',
+      button_id: this.id,
+      button_class: this.className,
+      button_text: this.textContent.trim()
+    });
+
+    // ユーザーにクリック済みだと分かるようにする
+    this.textContent = '👍 ありがとう！';
+    this.disabled = true;
+  });
+}
