@@ -242,6 +242,7 @@ if (likeButton) {
     window.dataLayer.push({
       event: 'like_click',
       reaction_type: 'like',
+      reaction_value: 1,
       button_id: this.id,
       button_class: this.className,
       button_text: this.textContent.trim()
